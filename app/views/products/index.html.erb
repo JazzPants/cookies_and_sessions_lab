@@ -1,0 +1,12 @@
+<% if @cart %>
+<%= @cart.join ', ' %>
+<% end %>
+<%= form_tag ({controller: 'products',
+action: 'add',
+method: 'post'}) do %>
+
+<input name=product>
+<input type=submit value='add to cart'>
+<%end%>
+
+<%= button_to 'Delete Session', {:controller => "products", :action => "destroy"} %>
